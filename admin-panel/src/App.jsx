@@ -12,14 +12,14 @@ export default function App() {
 
   useEffect(() => {
     // Replace with your actual backend URL once deployed
-    axios.get('http://localhost:4000/api/settings')
+    axios.get('https://kshitizadmin.onrender.com/api/settings')
       .then(res => { if(res.data) setData(res.data); })
       .catch(err => console.log("Initial fetch failed."));
   }, []);
 
   const handleSave = async () => {
     try {
-      await axios.post('http://localhost:4000/api/settings', data);
+      await axios.post('https://kshitizadmin.onrender.com/api/settings', data);
       alert("✅ Settings Updated!");
     } catch (error) {
       alert("❌ Update failed. Check connection.");
