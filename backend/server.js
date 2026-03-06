@@ -12,6 +12,11 @@ app.use(cors());
 // 1. Connection using Environment Variable
 const mongoURI = process.env.MONGO_URI; 
 
+// Add this route
+app.get('/', (req, res) => {
+  res.send('🚀 API is running successfully!');
+});
+
 mongoose.connect(mongoURI)
   .then(() => console.log("✅ MongoDB Connected via Environment Variable"))
   .catch(err => console.log("❌ Connection Error:", err));
